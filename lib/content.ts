@@ -226,7 +226,7 @@ export const TEAM: Person[] = [
     accent: "var(--bs)",
     accentText: "var(--white)",
     bio: "Co-founded PITH Africa, one of Nigeria’s biggest streetwear brands, now recognised internationally. He brings that experience of scaling a cultural brand beyond Lagos, and shapes how every More Labs property looks, sounds and hires.",
-    links: [{ label: "PITH on OkayAfrica ↗", href: "https://www.okayafrica.com/spotlight-pith-africa-are-for-the-young-and-free-african/284178" }],
+    links: [{ label: "PITH on OkayAfrica", href: "https://www.okayafrica.com/spotlight-pith-africa-are-for-the-young-and-free-african/284178" }],
   },
 ];
 
