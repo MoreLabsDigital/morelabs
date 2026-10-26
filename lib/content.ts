@@ -27,7 +27,8 @@ export type Vertical = {
   key: VerticalKey;
   name: string;
   short: string;
-  dot: string;
+  image: string;
+  imageClass?: string;
   kind: string;
   tagline: string;
   body: string[];
@@ -41,7 +42,8 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
     key: "mb",
     name: "MoreBranches",
     short: "Publication",
-    dot: "var(--white)",
+    image: "/images/morebranches-wordmark.png",
+    imageClass: "brand-image",
     kind: "Flagship publication · Since 2017",
     tagline: "What young and smart Africans read.",
     body: [
@@ -55,7 +57,11 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
       ["Partners", "Adidas, Martell, Budweiser, Spotify"],
     ],
     actions: [
-      { label: "Visit morebranches.com ↗", href: "https://morebranches.com", external: true },
+      {
+        label: "Visit morebranches.com ↗",
+        href: "https://morebranches.com",
+        external: true,
+      },
       { label: "Advertise with us", href: "#contact" },
     ],
     theme: { bg: "var(--white)", fg: "var(--ink)" },
@@ -64,7 +70,8 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
     key: "bs",
     name: "Broad Street",
     short: "Nightlife",
-    dot: "var(--bs-sign)",
+    image: "/images/broad-street-sign.png",
+    imageClass: "brand-image",
     kind: "Nightlife vertical",
     tagline: "Lagos after dark, on the record.",
     body: [
@@ -83,7 +90,8 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
     key: "m100",
     name: "MORE100",
     short: "Annual list",
-    dot: "var(--lime)",
+    image: "/images/M100.png",
+    imageClass: "brand-image",
     kind: "Annual honour list · Year 4",
     tagline: "One hundred Nigerians. Every year.",
     body: [
@@ -97,7 +105,10 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
     ],
     actions: [
       { label: "Sponsor the Class of 2026", href: "#contact" },
-      { label: "Nominate someone", href: "mailto:editorial@morelabsdigital.com?subject=MORE100%20nomination" },
+      {
+        label: "Nominate someone",
+        href: "mailto:editorial@morelabsdigital.com?subject=MORE100%20nomination",
+      },
     ],
     theme: { bg: "var(--lime)", fg: "var(--ink)" },
   },
@@ -105,7 +116,8 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
     key: "nawa",
     name: "Nawa!",
     short: "News product",
-    dot: "var(--nw-yellow)",
+    image: "/images/NAWA.png",
+    imageClass: "brand-image",
     kind: "News product · In development",
     tagline: "Nigerian news, in the language you speak.",
     body: [
@@ -125,10 +137,25 @@ export const VERTICALS: Record<VerticalKey, Vertical> = {
 export const VERTICAL_ORDER: VerticalKey[] = ["mb", "bs", "m100", "nawa"];
 
 export const MB_STATS = [
-  { value: "600K+", count: 600, suffix: "K+", label: "monthly readers across web and social" },
-  { value: "1 of 6", label: "Nigerian news creators in Google News Initiative’s Emerging News Voices 2026" },
-  { value: "2020", label: "credited by Al Jazeera for keeping #EndSARS covered" },
-  { value: "Repeat", label: "partners include Adidas, Martell, Budweiser and Spotify" },
+  {
+    value: "600K+",
+    count: 600,
+    suffix: "K+",
+    label: "monthly readers across web and social",
+  },
+  {
+    value: "1 of 6",
+    label:
+      "Nigerian news creators in Google News Initiative’s Emerging News Voices 2026",
+  },
+  {
+    value: "2020",
+    label: "credited by Al Jazeera for keeping #EndSARS covered",
+  },
+  {
+    value: "Repeat",
+    label: "partners include Adidas, Martell, Budweiser and Spotify",
+  },
 ];
 
 export const NAWA_WORDS = ["Tori", "Labarai", "Ìròyìn", "Akụkọ", "News"];
@@ -174,16 +201,48 @@ export const SERVICES = [
 export const TRUST_STATS = [
   { value: "73%", label: "of African Gen Z say brands don’t understand them" },
   { value: "89%", label: "actively distrust advertising aimed at them" },
-  { value: "12%", label: "average brand recall, against 47% in developed markets" },
-  { value: "0.3%", label: "low end of typical engagement, where 3 to 5% is a healthy baseline" },
+  {
+    value: "12%",
+    label: "average brand recall, against 47% in developed markets",
+  },
+  {
+    value: "0.3%",
+    label: "low end of typical engagement, where 3 to 5% is a healthy baseline",
+  },
 ];
 
 export const TIMELINE = [
-  { year: "2017", tag: "MoreBranches launches", color: "var(--bs-sign)", text: "We start MoreBranches to cover young African life from the inside, without the distance of legacy media." },
-  { year: "2020", tag: "#EndSARS · COVID-19", color: "var(--nw-red)", text: "Through the pandemic and #EndSARS we report in real time and help move safety information, legal aid and medical coordination. Al Jazeera names MoreBranches among the Nigerian platforms that kept the protests covered." },
-  { year: "2023", tag: "MORE100 begins", color: "#5d7d00", text: "The first MORE100 class honours a hundred Nigerians for the work they did that year. Brands like Adidas, Martell, Budweiser and Spotify keep coming back to reach our readers." },
-  { year: "2026", tag: "Google News Initiative", color: "var(--nw-indigo)", text: "Google News Initiative selects MoreBranches, without an application, as one of six Nigerian news creators in Emerging News Voices. We start work with FT Strategies on revenue and begin building Nawa!" },
-  { year: "Now", tag: "More Labs", color: "var(--ink)", text: "One parent company for the publications, the products and the brand work. MoreBranches goes social first with MoreBranchesTV.", link: { label: "Come build the next chapter with us.", href: "#contact" } },
+  {
+    year: "2017",
+    tag: "MoreBranches launches",
+    color: "var(--bs-sign)",
+    text: "We start MoreBranches to cover young African life from the inside, without the distance of legacy media.",
+  },
+  {
+    year: "2020",
+    tag: "#EndSARS · COVID-19",
+    color: "var(--nw-red)",
+    text: "Through the pandemic and #EndSARS we report in real time and help move safety information, legal aid and medical coordination. Al Jazeera names MoreBranches among the Nigerian platforms that kept the protests covered.",
+  },
+  {
+    year: "2023",
+    tag: "MORE100 begins",
+    color: "#5d7d00",
+    text: "The first MORE100 class honours a hundred Nigerians for the work they did that year. Brands like Adidas, Martell, Budweiser and Spotify keep coming back to reach our readers.",
+  },
+  {
+    year: "2026",
+    tag: "Google News Initiative",
+    color: "var(--nw-indigo)",
+    text: "Google News Initiative selects MoreBranches, without an application, as one of six Nigerian news creators in Emerging News Voices. We start work with FT Strategies on revenue and begin building Nawa!",
+  },
+  {
+    year: "Now",
+    tag: "More Labs",
+    color: "var(--ink)",
+    text: "One parent company for the publications, the products and the brand work. MoreBranches goes social first with MoreBranchesTV.",
+    link: { label: "Come build the next chapter with us.", href: "#contact" },
+  },
 ];
 
 export type Person = {
@@ -216,7 +275,9 @@ export const TEAM: Person[] = [
     accent: "var(--nw-indigo)",
     accentText: "var(--white)",
     bio: "Has worked with international journalists and outlets including DW, VICE and Audiomack, and brings that standard to how MoreBranches reports. He sets the editorial line across our publications and his byline still runs in them.",
-    links: [{ label: "Muck Rack ↗", href: "https://muckrack.com/nasirahmedachile" }],
+    links: [
+      { label: "Muck Rack ↗", href: "https://muckrack.com/nasirahmedachile" },
+    ],
   },
   {
     id: "adedayo",
@@ -226,15 +287,35 @@ export const TEAM: Person[] = [
     accent: "var(--bs)",
     accentText: "var(--white)",
     bio: "Co-founded PITH Africa, one of Nigeria’s biggest streetwear brands, now recognised internationally. He brings that experience of scaling a cultural brand beyond Lagos, and shapes how every More Labs property looks, sounds and hires.",
-    links: [{ label: "PITH on OkayAfrica", href: "https://www.okayafrica.com/spotlight-pith-africa-are-for-the-young-and-free-african/284178" }],
+    links: [
+      {
+        label: "PITH on OkayAfrica",
+        href: "https://www.okayafrica.com/spotlight-pith-africa-are-for-the-young-and-free-african/284178",
+      },
+    ],
   },
 ];
 
 export const RECOGNITION = [
-  { year: "2020", who: "Al Jazeera", text: "Credited MoreBranches among the Nigerian platforms that kept #EndSARS covered.", href: "https://www.aljazeera.com/" },
-  { year: "2026", who: "Google News Initiative", text: "Emerging News Voices cohort. One of six Nigerian creators, twenty across Africa.", href: "https://newsinitiative.withgoogle.com/" },
-  { year: "2026", who: "GNI Growth Lab", text: "Enrolled in Google’s programme for building sustainable newsrooms.", href: "https://newsinitiative.withgoogle.com/" },
-  { year: "2026", who: "FT Strategies", text: "Working directly with us on monetisation and new revenue.", href: "https://www.ftstrategies.com/" },
+  {
+    year: "2020",
+    who: "Al Jazeera",
+    text: "Credited MoreBranches among the Nigerian platforms that kept #EndSARS covered.",
+    href: "https://www.aljazeera.com/video/the-listening-post/2021/1/23/trump-out-biden-in-what-did-the-media-learn/",
+  },
+  {
+    year: "2026",
+    who: "Google News Initiative",
+    text: "Emerging News Voices cohort and GNI Growth Lab. One of six Nigerian creators, twenty across Africa, enrolled in Google’s programme for building sustainable newsrooms.",
+    href: "https://newsinitiative.withgoogle.com/",
+  },
+  // { year: "2026", who: "GNI Growth Lab", text: "Enrolled in Google’s programme for building sustainable newsrooms.", href: "https://newsinitiative.withgoogle.com/" },
+  {
+    year: "2026",
+    who: "FT Strategies",
+    text: "Working directly with us on monetisation and new revenue.",
+    href: "https://www.ftstrategies.com/",
+  },
 ];
 
 export const BRIEF_CHIPS: { label: string; to: "agency" | "editorial" }[] = [

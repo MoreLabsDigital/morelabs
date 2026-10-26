@@ -363,7 +363,7 @@ section {
 }
 .hero-index button {
   display: grid;
-  grid-template-columns: 12px minmax(0, 1fr) auto;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
   gap: 12px;
   align-items: center;
   text-align: left;
@@ -581,6 +581,8 @@ section {
   padding-right: clamp(44px, 6vw, 84px);
   flex-shrink: 0;
   animation: scroll var(--speed) linear infinite;
+  animation-duration: var(--speed) !important;
+  animation-iteration-count: infinite !important;
 }
 .marquee.rev .track {
   animation-direction: reverse;
@@ -650,6 +652,16 @@ section {
   background: var(--c);
   flex-shrink: 0;
 }
+.brand-mark {
+  display: block;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
 
 /* numbers */
 .numbers {
@@ -2041,12 +2053,20 @@ footer {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .track {
-    animation: none !important;
+   .track {
+    animation-duration: var(--speed) !important;
+    animation-iteration-count: infinite !important;
   }
   .marquee {
     overflow-x: auto;
   }
+}
+.marquee {
+  overflow: hidden !important;
+  scrollbar-width: none;
+}
+.marquee::-webkit-scrollbar {
+  display: none;
 }
 
 /* Stretched hit area: the whole card opens its panel, while the card keeps proper block markup. */
