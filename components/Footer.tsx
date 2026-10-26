@@ -1,24 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { PropertyLink } from "./PropertyLink";
 import { EMAIL, SITE } from "@/lib/content";
 
-function useLagosTime() {
-  const [t, setT] = useState<string | null>(null);
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "Africa/Lagos", hour: "2-digit", minute: "2-digit" });
-    const tick = () => setT(fmt.format(new Date()));
-    tick();
-    const id = setInterval(tick, 15000);
-    return () => clearInterval(id);
-  }, []);
-  return t;
-}
-
 export function Footer() {
-  const time = useLagosTime();
   const year = new Date().getFullYear();
   return (
     <footer>
@@ -68,7 +54,7 @@ export function Footer() {
         <Image className="f-logo" src="/images/morelabs-wordmark.png" alt="More Labs" width={1194} height={154} sizes="100vw" />
         <div className="f-base">
           <span>© {year} {SITE.legalName}. All rights reserved.</span>
-          <span>Lagos, Nigeria{time ? ` · ${time} WAT` : ""}</span>
+          <span>Lagos, Nigeria</span>
         </div>
       </div>
     </footer>
